@@ -1,0 +1,40 @@
+<div>
+<h1 class="page-header">Student</h1>
+  <form class="navbar-form navbar-right">
+    <input type="text" class="form-control" placeholder="Search..." data-ng-model="vm.searchText" ng-change="vm.onSearchBarChange()" ng-show="vm.hideEdit" valid-number>
+    <input type="text" class="form-control" placeholder="Search..." data-ng-model="vm.searchText" ng-change="vm.onSearchBarChange()" ng-hide="vm.hideEdit" valid-number>
+  </form>
+<h2 class="sub-header">{{vm.title}}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th ng-hide="vm.hideEdit">edit</th>
+      <th ng-show="vm.hideEdit">&nbsp;</th>
+      <th>gpa</th>
+    </tr>
+    </thead>
+    <tbody class="example-animate-container">
+    <tr  class="animate-repeat" data-ng-repeat="student in vm.students">
+
+      <td>{{$index+1}}</td>
+      <td>{{student.studentId}}</td>
+      <td>{{student.name}}</td>
+      <td ng-hide="vm.hideEdit" ><button type="button" class="btn btn-default" ng-click="vm.onEditStudent(student)">Edit</button></td>
+      <th ng-show="vm.hideEdit">&nbsp;</th>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.gpa|number:2}}</td>
+    </tr>
+    </tbody>
+    <tr>
+      <td><h4>Total</h4></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td align="left"><h4>{{vm.students.length}} Persons</h4></td>
+    </tr>
+  </table>
+</div>
+</div>

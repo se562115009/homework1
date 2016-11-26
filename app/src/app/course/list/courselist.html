@@ -1,0 +1,27 @@
+<div>
+<h1 class="page-header">Course</h1>
+  <form class="navbar-form navbar-right">
+    <input type="text" class="form-control" placeholder="Search..." data-ng-model="vm.searchText" ng-change="vm.onSearchBarChange()">
+  </form>
+<h2 class="sub-header">find course</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Course Id</th>
+      <th>Course Name</th>
+    </tr>
+    </thead>
+    <tbody class="example-animate-container">
+    <tr  class="animate-repeat" data-ng-repeat="course in vm.courses">
+
+      <td>{{$index+1}}</td>
+      <td>{{course.courseId}}</td>
+      <td>{{course.courseName}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
